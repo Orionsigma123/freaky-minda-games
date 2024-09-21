@@ -173,6 +173,11 @@
             openGame(subwaySurfersUrl);
         });
 
+                document.getElementById('monkeymartBtn').addEventListener('click', function() {
+            const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
+            openGame(monkeymartUrl);
+        });
+
         // Return button event listener
         document.getElementById('returnBtn').addEventListener('click', function() {
             const hiddenLinks = document.getElementById('hiddenLinks');
