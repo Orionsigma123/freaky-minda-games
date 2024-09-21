@@ -208,7 +208,7 @@
         });
 
         document.getElementById('CookieBtn').addEventListener('click', function() {
-            const CookieUrl = 'https://trixter9994.github.io/Cookie-Clicker-Source-Code/';
+            const CookieUrl = 'https://stormyskitten.github.io/CookieClickerUnblocked/';
             openGame(CookieUrl);
         });
 
