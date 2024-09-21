@@ -95,7 +95,7 @@
     <div id="tosPopup">
         <div id="tosContent">
             <h3>Terms of Service</h3>
-            <p>I am not liable if you get in trouble with this website, and it is not my fault if you get ISS, or OSS.</p>
+            <p>I am not liable if you get in trouble with this website, and it is not my fault if you get ISS, or OSS. If you are to get in trouble with this website, it will be on you, and not me. Do not harrass me (Orion minda) if you get oss or iss through my socials, or in real life. If you agree to these terms and conditions, you may continue on.</p>
             <button id="agreeBtn">I Agree to the Terms and Conditions</button>
         </div>
     </div>
