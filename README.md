@@ -41,6 +41,14 @@
             transform: scale(1.2) rotate(15deg); /* Grow and rotate the button */
         }
 
+        /* "Other" button positioning */
+        #otherBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+        }
+
         /* Other styling */
         .button-container {
             background-color: #000;
@@ -95,8 +103,8 @@
             <button id="subwaySurfersBtn">Subway Surfers</button>
             <button id="monkeymartBtn">Monkey Mart</button>
             <button id="CookieBtn">Cookie clicker</button>
-            <button id="otherBtn">Other</button> <!-- Button to go to other screen -->
         </div>
+        <button id="otherBtn">Other</button> <!-- Button to go to other screen -->
     </div>
 
     <!-- Other Screen -->
