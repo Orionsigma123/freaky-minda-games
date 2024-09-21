@@ -138,25 +138,22 @@
             window.open('https://snapchat.com/add/iam2011orion', '_blank');
         });
 
-        // Retro Bowl button event listener
+        // Game button event listeners
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
             const retroBowlUrl = 'https://loserboysonyt.github.io/';
             openGame(retroBowlUrl);
         });
 
-        // Slope button event listener
         document.getElementById('slopeBtn').addEventListener('click', function() {
             const slopeUrl = 'https://firespread01.github.io/slope/';
             openGame(slopeUrl);
         });
 
-        // Flappy Bird button event listener
         document.getElementById('flappyBirdBtn').addEventListener('click', function() {
             const flappyBirdUrl = 'https://jxmked.github.io/Flappybird/';
             openGame(flappyBirdUrl);
         });
 
-        // Mario 64 button event listener
         document.getElementById('mario64Btn').addEventListener('click', function() {
             const mario64Url = 'https://sm64-embed.glitch.me/start.html';
             openGame(mario64Url);
