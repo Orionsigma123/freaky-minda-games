@@ -135,7 +135,7 @@
         <button id="mario64Btn">Mario 64</button>
         <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
         <button id="monkeymartBtn">Monkey Mart</button>
-        <button id="CookieBtn">Cookie clicker</button>
+        <button id="CookieBtn">eggy car</button>
     </div>
 
     <!-- Media container to hold the game -->
@@ -208,7 +208,7 @@
         });
 
         document.getElementById('CookieBtn').addEventListener('click', function() {
-            const CookieUrl = 'https://stormyskitten.github.io/CookieClickerUnblocked/';
+            const CookieUrl = 'https://www.yurk.com/games/eggycar/';
             openGame(CookieUrl);
         });
 
