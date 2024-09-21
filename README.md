@@ -141,7 +141,7 @@
 </head>
 <body>
     <div id="mainContent">
-        <h1>FREAKY MINDA FOREVER!/h1>
+        <h1>FREAKY MINDA FOREVER!</h1>
         <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
         <button id="otherBtn">Other</button>
