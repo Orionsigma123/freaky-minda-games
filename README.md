@@ -53,6 +53,7 @@
     <!-- Buttons to trigger the media player for different games -->
     <button id="retroBowlBtn">Retro Bowl</button>
     <button id="slopeBtn">Slope</button>
+    <button id="flappyBirdBtn">Flappy Bird</button>
     
     <!-- Media container to hold the game -->
     <div id="media-container">
@@ -80,14 +81,10 @@
             openGame(slopeUrl);
         });
 
-        // Exit button to close the game iframe
-        document.getElementById('exitBtn').addEventListener('click', function() {
-            document.getElementById('gameFrame').src = ''; // Clear the iframe
-            document.getElementById('media-container').style.display = 'none'; // Hide the media container
-        });
-                document.getElementById('slopeBtn').addEventListener('click', function() {
-            const slopeUrl = 'https://firespread01.github.io/slope/';
-            openGame(slopeUrl);
+        // Flappy Bird button event listener
+        document.getElementById('flappyBirdBtn').addEventListener('click', function() {
+            const flappyBirdUrl = 'https://jxmked.github.io/Flappybird/';
+            openGame(flappyBirdUrl);
         });
 
         // Exit button to close the game iframe
@@ -95,7 +92,6 @@
             document.getElementById('gameFrame').src = ''; // Clear the iframe
             document.getElementById('media-container').style.display = 'none'; // Hide the media container
         });
-
     </script>
 </body>
 </html>
