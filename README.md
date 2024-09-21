@@ -82,7 +82,7 @@
 
         // Retro Bowl button event listener
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
-            const retroBowlUrl = 'https://retrobowl.me/';
+            const retroBowlUrl = 'https://loserboysonyt.github.io/';
             openGame(retroBowlUrl);
         });
 
