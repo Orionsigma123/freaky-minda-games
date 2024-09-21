@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -142,7 +141,7 @@
 </head>
 <body>
     <div id="mainContent">
-        <h1>Orionsigma123.Github.io</h1>
+        <h1>FREAKY MINDA FOREVER!/h1>
         <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
         <button id="otherBtn">Other</button>
@@ -155,6 +154,7 @@
             <button id="mario64Btn">Mario 64</button>
             <button id="subwaySurfersBtn">Subway Surfers</button>
             <button id="monkeymartBtn">Monkey Mart</button>
+            <button id="DirtbikeBtn">Dirtbike game</button>
         </div>
     </div>
 
@@ -213,7 +213,7 @@
         });
 
         document.getElementById('slopeBtn').addEventListener('click', function() {
-            openMediaPlayer('https://firespread01.github.io/slope/');
+            openMediaPlayer('https://slope.faav.top/');
         });
 
         document.getElementById('flappyBirdBtn').addEventListener('click', function() {
@@ -233,6 +233,11 @@
         document.getElementById('monkeymartBtn').addEventListener('click', function() {
             const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
             openMediaPlayer(monkeymartUrl);
+        });
+
+                // Game button event listeners to open in media player
+        document.getElementById('DirtbikeBtn').addEventListener('click', function() {
+            openMediaPlayer('https://www.friv.com/z/games/motox3m/game.html');
         });
 
         // Function to open games in media player
