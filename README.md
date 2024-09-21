@@ -88,6 +88,37 @@
             border: none;
         }
 
+        /* Modal styles */
+        #mediaPlayerModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mediaPlayer {
+            width: 800px;
+            height: 600px;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
         /* Hidden content styles */
         #gameFrame {
             display: none;
@@ -138,6 +169,12 @@
         </div>
     </div>
 
+    <!-- Modal for media player -->
+    <div id="mediaPlayerModal" class="modal">
+        <button class="modal-close" onclick="closeMediaPlayer()">✖</button>
+        <iframe id="mediaPlayer" src=""></iframe>
+    </div>
+
     <script>
         // Switching between main content and other section
         document.getElementById('otherBtn').addEventListener('click', function() {
@@ -171,25 +208,14 @@
 
         // Function to open games in media player
         function openMediaPlayer(url) {
-            const mediaPlayer = window.open('', '_blank', 'width=800,height=600');
-            mediaPlayer.document.write(`
-                <html>
-                    <head>
-                        <title>Game</title>
-                        <style>
-                            body { margin: 0; overflow: hidden; }
-                            iframe {
-                                width: 100vw;
-                                height: 100vh;
-                                border: none;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <iframe src="${url}"></iframe>
-                    </body>
-                </html>
-            `);
+            document.getElementById('mediaPlayer').src = url;
+            document.getElementById('mediaPlayerModal').style.display = 'flex';
+        }
+
+        // Function to close media player
+        function closeMediaPlayer() {
+            document.getElementById('mediaPlayerModal').style.display = 'none';
+            document.getElementById('mediaPlayer').src = ''; // Clear src to stop the game
         }
 
         // Function to toggle fullscreen
