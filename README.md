@@ -107,6 +107,7 @@
         <button id="flappyBirdBtn">Flappy Bird</button>
         <button id="mario64Btn">Mario 64</button>
         <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
+        <button id="monkeymartBtn">Monkey Mart</button>
     </div>
 
     <!-- Media container to hold the game -->
