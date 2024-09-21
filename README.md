@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,25 +14,14 @@
         h1, h2 {
             color: #333;
         }
-        /* Popup styles */
-        #tosPopup {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+
+        /* Home and Other screens hidden/show */
+        #homeScreen, #otherScreen {
+            display: none;
         }
-        #tosContent {
-            background-color: #fff;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            border-radius: 10px; /* Rounded corners */
+
+        #homeScreen.active, #otherScreen.active {
+            display: block;
         }
 
         /* Button styling and hover animation */
@@ -51,30 +40,8 @@
             background-color: #218838;
             transform: scale(1.2) rotate(15deg); /* Grow and rotate the button */
         }
-        @keyframes rotateIn {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(15deg);
-            }
-        }
-        @keyframes rotateOut {
-            0% {
-                transform: rotate(15deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-        button:hover {
-            animation: rotateIn 0.5s ease forwards; /* Rotation animation when hovering */
-        }
-        button {
-            animation: rotateOut 0.5s ease forwards; /* Return to original state when unhovered */
-        }
 
-        /* Other existing styles */
+        /* Other styling */
         .button-container {
             background-color: #000;
             padding: 20px;
@@ -118,24 +85,24 @@
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
-    <!-- Terms of Service Popup -->
-    <div id="tosPopup">
-        <div id="tosContent">
-            <h3>Terms of Service</h3>
-            <p>I am not liable if you get in trouble with this website, and it is not my fault if you get ISS, or OSS. If you are to get in trouble with this website, it will be on you, and not me. Do not harass me (Orion Minda) if you get OSS or ISS through my socials, or in real life. If you agree to these terms and conditions, you may continue on.</p>
-            <button id="agreeBtn">I Agree to the Terms and Conditions</button>
+    <!-- Home Screen -->
+    <div id="homeScreen" class="active">
+        <div class="button-container">
+            <button id="retroBowlBtn">Retro Bowl</button>
+            <button id="slopeBtn">Slope</button>
+            <button id="flappyBirdBtn">Flappy Bird</button>
+            <button id="mario64Btn">Mario 64</button>
+            <button id="subwaySurfersBtn">Subway Surfers</button>
+            <button id="monkeymartBtn">Monkey Mart</button>
+            <button id="CookieBtn">Cookie clicker</button>
+            <button id="otherBtn">Other</button> <!-- Button to go to other screen -->
         </div>
     </div>
 
-    <!-- Container for the buttons -->
-    <div class="button-container" style="display: none;"> <!-- Initially hidden -->
-        <button id="retroBowlBtn">Retro Bowl</button>
-        <button id="slopeBtn">Slope</button>
-        <button id="flappyBirdBtn">Flappy Bird</button>
-        <button id="mario64Btn">Mario 64</button>
-        <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
-        <button id="monkeymartBtn">Monkey Mart</button>
-        <button id="CookieBtn">eggy car</button>
+    <!-- Other Screen -->
+    <div id="otherScreen">
+        <h2>Welcome to the Other Screen</h2>
+        <button id="homeBtn">Go Back to Home</button>
     </div>
 
     <!-- Media container to hold the game -->
@@ -144,9 +111,6 @@
         <button id="exitBtn">Exit</button>
     </div>
 
-    <!-- Return button -->
-    <button id="returnBtn" style="display: none;">Return back to hide</button>
-
     <!-- Hidden links for Schoology and Classlink -->
     <div id="hiddenLinks">
         <button id="schoologyBtn">Schoology</button>
@@ -154,18 +118,20 @@
     </div>
 
     <script>
+        // Show ToS Popup on page load
         function showToSPopup() {
             document.getElementById('tosPopup').style.display = 'block'; // Show the ToS popup
         }
 
-        document.getElementById('agreeBtn').addEventListener('click', function() {
-            document.getElementById('tosPopup').style.display = 'none'; // Hide the ToS popup
-            document.querySelector('.button-container').style.display = 'block'; // Show the button container
-            
-            // Request fullscreen after agreeing
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            }
+        // Switching between home and other screens
+        document.getElementById('otherBtn').addEventListener('click', function() {
+            document.getElementById('homeScreen').classList.remove('active');
+            document.getElementById('otherScreen').classList.add('active');
+        });
+
+        document.getElementById('homeBtn').addEventListener('click', function() {
+            document.getElementById('otherScreen').classList.remove('active');
+            document.getElementById('homeScreen').classList.add('active');
         });
 
         // Function to open the game in the iframe
@@ -196,7 +162,6 @@
             openGame(mario64Url);
         });
 
-        // Subway Surfers button event listener
         document.getElementById('subwaySurfersBtn').addEventListener('click', function() {
             const subwaySurfersUrl = 'https://grims.pro/_games/subway-surfers-bali/';
             openGame(subwaySurfersUrl);
@@ -208,15 +173,8 @@
         });
 
         document.getElementById('CookieBtn').addEventListener('click', function() {
-            const CookieUrl = 'https://www.yurk.com/games/eggycar/';
+            const CookieUrl = 'https://trixter9994.github.io/Cookie-Clicker-Source-Code/';
             openGame(CookieUrl);
-        });
-
-        // Return button event listener
-        document.getElementById('returnBtn').addEventListener('click', function() {
-            const hiddenLinks = document.getElementById('hiddenLinks');
-            hiddenLinks.style.display = hiddenLinks.style.display === 'none' ? 'block' : 'none';
-            document.getElementById('media-container').style.display = 'none'; // Hide media when showing hidden links
         });
 
         // Schoology button event listener
@@ -238,4 +196,3 @@
     </script>
 </body>
 </html>
-**
