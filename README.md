@@ -35,6 +35,24 @@
         button:hover {
             background-color: #218838;
         }
+        /* Style for the Snapchat button */
+        #snapchatBtn {
+            position: absolute; /* Positioning it at the top center */
+            top: 10px; /* Distance from the top */
+            left: 50%; /* Centering */
+            transform: translateX(-50%); /* Centering correction */
+            background-color: white; /* White background */
+            color: black; /* Black text */
+            border: none;
+            border-radius: 15px; /* Smooth rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+        }
+        #snapchatBtn:hover {
+            background-color: #f0f0f0; /* Slightly darker on hover */
+        }
         #media-container {
             display: none; /* Hidden by default */
             margin-top: 20px;
@@ -52,35 +70,14 @@
         #exitBtn:hover {
             background-color: #c82333;
         }
-        /* Style for the suggestions section */
-        #suggestionForm {
-            margin-top: 20px;
-        }
-        #suggestionInput {
-            padding: 10px;
-            width: 300px;
-            margin-right: 10px;
-        }
-        #suggestions {
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: auto;
-            text-align: left;
-        }
-        .suggestion-item {
-            background-color: #e9e9e9;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
+
+    <!-- Snapchat button at the top center -->
+    <button id="snapchatBtn">My Snapchat</button>
 
     <!-- Container for the buttons with black background and rounded corners -->
     <div class="button-container">
@@ -88,7 +85,7 @@
         <button id="retroBowlBtn">Retro Bowl</button>
         <button id="slopeBtn">Slope</button>
         <button id="flappyBirdBtn">Flappy Bird</button>
-        <button id="suggestionBtn">Suggestions</button>
+        <button id="mario64Btn">Mario 64</button> <!-- Added Mario 64 button -->
     </div>
     
     <!-- Media container to hold the game -->
@@ -98,24 +95,17 @@
         <button id="exitBtn">Exit</button>
     </div>
 
-    <!-- Suggestion form -->
-    <div id="suggestionForm" style="display: none;">
-        <input type="text" id="suggestionInput" placeholder="Enter your suggestion" />
-        <button id="submitSuggestionBtn">Submit</button>
-    </div>
-
-    <!-- Display suggestions -->
-    <div id="suggestions">
-        <h3>User Suggestions:</h3>
-        <div id="suggestionsList"></div>
-    </div>
-
     <script>
         // Function to open the game in the iframe
         function openGame(url) {
             document.getElementById('gameFrame').src = url;
             document.getElementById('media-container').style.display = 'block';
         }
+
+        // Snapchat button event listener
+        document.getElementById('snapchatBtn').addEventListener('click', function() {
+            window.open('https://snapchat.com/add/iam2011orion', '_blank');
+        });
 
         // Retro Bowl button event listener
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
@@ -135,46 +125,17 @@
             openGame(flappyBirdUrl);
         });
 
+        // Mario 64 button event listener
+        document.getElementById('mario64Btn').addEventListener('click', function() {
+            const mario64Url = 'https://sm64-embed.glitch.me/start.html';
+            openGame(mario64Url);
+        });
+
         // Exit button to close the game iframe
         document.getElementById('exitBtn').addEventListener('click', function() {
             document.getElementById('gameFrame').src = ''; // Clear the iframe
             document.getElementById('media-container').style.display = 'none'; // Hide the media container
         });
-
-        // Toggle suggestion form visibility
-        document.getElementById('suggestionBtn').addEventListener('click', function() {
-            const form = document.getElementById('suggestionForm');
-            form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        });
-
-        // Function to load suggestions from local storage
-        function loadSuggestions() {
-            const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-            const suggestionsList = document.getElementById('suggestionsList');
-            suggestionsList.innerHTML = '';
-            suggestions.forEach(suggestion => {
-                const suggestionDiv = document.createElement('div');
-                suggestionDiv.classList.add('suggestion-item');
-                suggestionDiv.textContent = suggestion;
-                suggestionsList.appendChild(suggestionDiv);
-            });
-        }
-
-        // Submit suggestion and save it to local storage
-        document.getElementById('submitSuggestionBtn').addEventListener('click', function() {
-            const suggestionInput = document.getElementById('suggestionInput');
-            const suggestion = suggestionInput.value.trim();
-            if (suggestion) {
-                const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
-                suggestions.push(suggestion);
-                localStorage.setItem('suggestions', JSON.stringify(suggestions));
-                suggestionInput.value = '';
-                loadSuggestions();
-            }
-        });
-
-        // Load suggestions on page load
-        loadSuggestions();
     </script>
 </body>
 </html>
