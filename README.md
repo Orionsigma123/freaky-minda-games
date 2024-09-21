@@ -31,9 +31,9 @@
             bottom: 100%;
             width: 20px; /* Adjust column width */
             white-space: nowrap;
-            color: #0F0; /* Green color */
             font-family: monospace; /* Monospace font */
-            animation: fall 3s linear infinite;
+            animation: fall linear infinite;
+            opacity: 0.7; /* Slight transparency for a glitchy effect */
         }
         @keyframes fall {
             to {
@@ -166,6 +166,15 @@
             }
         });
 
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         // Create Matrix effect
         function createMatrixEffect() {
             const matrixContainer = document.createElement('div');
@@ -179,8 +188,12 @@
                 const column = document.createElement('div');
                 column.classList.add('column');
                 column.style.left = `${i * 20}px`; // Position each column
+                column.style.color = getRandomColor(); // Set random color
                 column.textContent = Array.from({ length: 20 }).map(() => characters[Math.floor(Math.random() * characters.length)]).join(''); // Random characters
                 matrixContainer.appendChild(column);
+                
+                // Add keyframe animation for glitchy effect
+                column.style.animationDuration = `${Math.random() * 2 + 2}s`; // Random duration between 2 and 4 seconds
             }
         }
 
