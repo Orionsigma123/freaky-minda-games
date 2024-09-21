@@ -143,6 +143,8 @@
             <button id="slopeBtn">Slope</button>
             <button id="flappyBirdBtn">Flappy Bird</button>
             <button id="mario64Btn">Mario 64</button>
+            <button id="subwaySurfersBtn">Subway Surfers</button>
+            <button id="monkeymartBtn">Monkey Mart</button>
         </div>
     </div>
 
@@ -204,6 +206,17 @@
 
         document.getElementById('mario64Btn').addEventListener('click', function() {
             openMediaPlayer('https://sm64-embed.glitch.me/start.html');
+        });
+
+        // New game buttons for Subway Surfers and Monkey Mart
+        document.getElementById('subwaySurfersBtn').addEventListener('click', function() {
+            const subwaySurfersUrl = 'https://grims.pro/_games/subway-surfers-bali/';
+            openMediaPlayer(subwaySurfersUrl);
+        });
+
+        document.getElementById('monkeymartBtn').addEventListener('click', function() {
+            const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
+            openMediaPlayer(monkeymartUrl);
         });
 
         // Function to open games in media player
