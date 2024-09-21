@@ -28,7 +28,7 @@
         }
         .column {
             position: absolute;
-            bottom: 100%;
+            top: 0; /* Start from the top */
             width: 20px; /* Adjust column width */
             white-space: nowrap;
             font-family: monospace; /* Monospace font */
@@ -80,6 +80,7 @@
             border-radius: 15px;
             display: inline-block;
             margin-top: 20px;
+            z-index: 1; /* Bring buttons above matrix effect */
         }
         #media-container {
             display: none; /* Hidden by default */
@@ -194,6 +195,7 @@
                 
                 // Add keyframe animation for glitchy effect
                 column.style.animationDuration = `${Math.random() * 2 + 2}s`; // Random duration between 2 and 4 seconds
+                column.style.animationName = "fall"; // Ensure fall animation is applied
             }
         }
 
