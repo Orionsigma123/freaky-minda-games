@@ -48,7 +48,8 @@
 </head>
 <body>
     <h1>Orionsigma123.Github.io</h1>
-    <h2>Welcome to Freaky Mindas Unblocked Games</h2>
+    <h2>Welcome to Freaky Mindas Games</h2>
+    <h3>FREAKY MINDA FOREVER</h3>
     
     <!-- Buttons to trigger the media player for different games -->
     <button id="retroBowlBtn">Retro Bowl</button>
