@@ -70,6 +70,27 @@
         #exitBtn:hover {
             background-color: #c82333;
         }
+        /* Style for the return button and hidden links */
+        #returnBtn {
+            position: absolute; /* Positioning it at the bottom center */
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%; /* Centering */
+            transform: translateX(-50%); /* Centering correction */
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #returnBtn:hover {
+            background-color: #0069d9; /* Darker blue on hover */
+        }
+        #hiddenLinks {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +114,15 @@
         <iframe id="gameFrame" src=""></iframe>
         <!-- Exit button to close the iframe -->
         <button id="exitBtn">Exit</button>
+    </div>
+
+    <!-- Return button at the bottom center -->
+    <button id="returnBtn">Return back to hide</button>
+
+    <!-- Hidden links for Schoology and Classlink -->
+    <div id="hiddenLinks">
+        <button id="schoologyBtn">Schoology</button>
+        <button id="classlinkBtn">Classlink</button>
     </div>
 
     <script>
@@ -129,6 +159,22 @@
         document.getElementById('mario64Btn').addEventListener('click', function() {
             const mario64Url = 'https://sm64-embed.glitch.me/start.html';
             openGame(mario64Url);
+        });
+
+        // Return button event listener
+        document.getElementById('returnBtn').addEventListener('click', function() {
+            const hiddenLinks = document.getElementById('hiddenLinks');
+            hiddenLinks.style.display = hiddenLinks.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Schoology button event listener
+        document.getElementById('schoologyBtn').addEventListener('click', function() {
+            window.open('https://www.schoology.com', '_blank');
+        });
+
+        // Classlink button event listener
+        document.getElementById('classlinkBtn').addEventListener('click', function() {
+            window.open('https://www.classlink.com', '_blank');
         });
 
         // Exit button to close the game iframe
