@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+**<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,8 @@
             width: 80%; /* Could be more or less, depending on screen size */
             border-radius: 10px; /* Rounded corners */
         }
+
+        /* Button styling and hover animation */
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -43,10 +45,35 @@
             cursor: pointer;
             border-radius: 5px;
             margin-top: 10px;
+            transition: transform 0.5s ease, background-color 0.3s ease; /* Smooth transition for scaling and rotation */
         }
         button:hover {
             background-color: #218838;
+            transform: scale(1.2) rotate(15deg); /* Grow and rotate the button */
         }
+        @keyframes rotateIn {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(15deg);
+            }
+        }
+        @keyframes rotateOut {
+            0% {
+                transform: rotate(15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        button:hover {
+            animation: rotateIn 0.5s ease forwards; /* Rotation animation when hovering */
+        }
+        button {
+            animation: rotateOut 0.5s ease forwards; /* Return to original state when unhovered */
+        }
+
         /* Other existing styles */
         .button-container {
             background-color: #000;
@@ -108,8 +135,7 @@
         <button id="mario64Btn">Mario 64</button>
         <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
         <button id="monkeymartBtn">Monkey Mart</button>
-        <button id="CookieBtn">Eggy car</button>
-        <button id="SnowBtn">Snow rider 3d</button>
+        <button id="CookieBtn">eggy car</button>
     </div>
 
     <!-- Media container to hold the game -->
@@ -176,20 +202,15 @@
             openGame(subwaySurfersUrl);
         });
 
-                document.getElementById('monkeymartBtn').addEventListener('click', function() {
+        document.getElementById('monkeymartBtn').addEventListener('click', function() {
             const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
             openGame(monkeymartUrl);
         });
-                // Subway Surfers button event listener
+
         document.getElementById('CookieBtn').addEventListener('click', function() {
             const CookieUrl = 'https://www.yurk.com/games/eggycar/';
             openGame(CookieUrl);
         });
-
-        document.getElementById('SnowBtn').addEventListener('click', function ()  {
-            const SnowUrl = 'https://drippy-cat.github.io/snowrider3D/';
-            openGame(SnowUrl);
-        {);
 
         // Return button event listener
         document.getElementById('returnBtn').addEventListener('click', function() {
@@ -217,4 +238,4 @@
     </script>
 </body>
 </html>
-
+**
