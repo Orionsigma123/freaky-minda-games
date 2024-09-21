@@ -10,35 +10,9 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
-            overflow: hidden; /* Prevent scrollbars */
-            position: relative;
         }
         h1, h2 {
             color: #333;
-        }
-        /* Matrix effect styles */
-        .matrix {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Behind all other elements */
-        }
-        .column {
-            position: absolute;
-            bottom: 100%;
-            width: 20px; /* Adjust column width */
-            white-space: nowrap;
-            font-family: monospace; /* Monospace font */
-            animation: fall linear infinite;
-            opacity: 0.7; /* Slight transparency for a glitchy effect */
-        }
-        @keyframes fall {
-            to {
-                transform: translateY(100vh); /* Move down to the bottom */
-            }
         }
         /* Popup styles */
         #tosPopup {
@@ -113,7 +87,7 @@
         }
     </style>
 </head>
-<body onload="showToSPopup(); createMatrixEffect()">
+<body onload="showToSPopup()">
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
@@ -166,37 +140,6 @@
             }
         });
 
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        // Create Matrix effect
-        function createMatrixEffect() {
-            const matrixContainer = document.createElement('div');
-            matrixContainer.classList.add('matrix');
-            document.body.appendChild(matrixContainer);
-
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            const columns = Math.floor(window.innerWidth / 20); // Number of columns based on screen width
-
-            for (let i = 0; i < columns; i++) {
-                const column = document.createElement('div');
-                column.classList.add('column');
-                column.style.left = `${i * 20}px`; // Position each column
-                column.style.color = getRandomColor(); // Set random color
-                column.textContent = Array.from({ length: 20 }).map(() => characters[Math.floor(Math.random() * characters.length)]).join(''); // Random characters
-                matrixContainer.appendChild(column);
-                
-                // Add keyframe animation for glitchy effect
-                column.style.animationDuration = `${Math.random() * 2 + 2}s`; // Random duration between 2 and 4 seconds
-            }
-        }
-
         // Function to open the game in the iframe
         function openGame(url) {
             document.getElementById('gameFrame').src = url;
@@ -231,7 +174,7 @@
             openGame(subwaySurfersUrl);
         });
 
-        document.getElementById('monkeymartBtn').addEventListener('click', function() {
+                document.getElementById('monkeymartBtn').addEventListener('click', function() {
             const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
             openGame(monkeymartUrl);
         });
@@ -262,3 +205,4 @@
     </script>
 </body>
 </html>
+
