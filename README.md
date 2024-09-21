@@ -14,6 +14,14 @@
         h1, h2 {
             color: #333;
         }
+        /* Style for the button container */
+        .button-container {
+            background-color: #000; /* Black background */
+            padding: 20px;
+            border-radius: 15px; /* Smooth rounded corners */
+            display: inline-block; /* Ensures the rectangle wraps tightly around buttons */
+            margin-top: 20px;
+        }
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -48,13 +56,15 @@
 </head>
 <body>
     <h1>Orionsigma123.Github.io</h1>
-    <h2>Welcome to Freaky Mindas Games</h2>
-    <h3>FREAKY MINDA FOREVER</h3>
-    
-    <!-- Buttons to trigger the media player for different games -->
-    <button id="retroBowlBtn">Retro Bowl</button>
-    <button id="slopeBtn">Slope</button>
-    <button id="flappyBirdBtn">Flappy Bird</button>
+    <h2>Welcome to Freaky Mindas Unblocked Games</h2>
+
+    <!-- Container for the buttons with black background and rounded corners -->
+    <div class="button-container">
+        <!-- Buttons to trigger the media player for different games -->
+        <button id="retroBowlBtn">Retro Bowl</button>
+        <button id="slopeBtn">Slope</button>
+        <button id="flappyBirdBtn">Flappy Bird</button>
+    </div>
     
     <!-- Media container to hold the game -->
     <div id="media-container">
@@ -72,7 +82,7 @@
 
         // Retro Bowl button event listener
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
-            const retroBowlUrl = 'https://ubg98.github.io/RetroBowl/';
+            const retroBowlUrl = 'https://retrobowl.me/';
             openGame(retroBowlUrl);
         });
 
