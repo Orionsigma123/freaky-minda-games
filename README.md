@@ -152,22 +152,45 @@
             document.getElementById('homeBtn').style.display = 'none';
         });
 
-        // Game button event listeners
+        // Game button event listeners to open in media player
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
-            window.open('https://loserboysonyt.github.io/', '_blank');
+            openMediaPlayer('https://loserboysonyt.github.io/');
         });
 
         document.getElementById('slopeBtn').addEventListener('click', function() {
-            window.open('https://firespread01.github.io/slope/', '_blank');
+            openMediaPlayer('https://firespread01.github.io/slope/');
         });
 
         document.getElementById('flappyBirdBtn').addEventListener('click', function() {
-            window.open('https://jxmked.github.io/Flappybird/', '_blank');
+            openMediaPlayer('https://jxmked.github.io/Flappybird/');
         });
 
         document.getElementById('mario64Btn').addEventListener('click', function() {
-            window.open('https://sm64-embed.glitch.me/start.html', '_blank');
+            openMediaPlayer('https://sm64-embed.glitch.me/start.html');
         });
+
+        // Function to open games in media player
+        function openMediaPlayer(url) {
+            const mediaPlayer = window.open('', '_blank', 'width=800,height=600');
+            mediaPlayer.document.write(`
+                <html>
+                    <head>
+                        <title>Game</title>
+                        <style>
+                            body { margin: 0; overflow: hidden; }
+                            iframe {
+                                width: 100vw;
+                                height: 100vh;
+                                border: none;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <iframe src="${url}"></iframe>
+                    </body>
+                </html>
+            `);
+        }
 
         // Function to toggle fullscreen
         function toggleFullscreen(id) {
