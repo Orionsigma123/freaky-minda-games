@@ -130,6 +130,7 @@
         function openGame(url) {
             document.getElementById('gameFrame').src = url;
             document.getElementById('media-container').style.display = 'block';
+            document.getElementById('returnBtn').style.display = 'none'; // Hide return button
         }
 
         // Snapchat button event listener
@@ -165,6 +166,7 @@
         document.getElementById('returnBtn').addEventListener('click', function() {
             const hiddenLinks = document.getElementById('hiddenLinks');
             hiddenLinks.style.display = hiddenLinks.style.display === 'none' ? 'block' : 'none';
+            document.getElementById('media-container').style.display = 'none'; // Hide media when showing hidden links
         });
 
         // Schoology button event listener
@@ -181,6 +183,7 @@
         document.getElementById('exitBtn').addEventListener('click', function() {
             document.getElementById('gameFrame').src = ''; // Clear the iframe
             document.getElementById('media-container').style.display = 'none'; // Hide the media container
+            document.getElementById('returnBtn').style.display = 'block'; // Show return button
         });
     </script>
 </body>
