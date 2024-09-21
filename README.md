@@ -85,6 +85,17 @@
             document.getElementById('gameFrame').src = ''; // Clear the iframe
             document.getElementById('media-container').style.display = 'none'; // Hide the media container
         });
+                document.getElementById('slopeBtn').addEventListener('click', function() {
+            const slopeUrl = 'https://firespread01.github.io/slope/';
+            openGame(slopeUrl);
+        });
+
+        // Exit button to close the game iframe
+        document.getElementById('exitBtn').addEventListener('click', function() {
+            document.getElementById('gameFrame').src = ''; // Clear the iframe
+            document.getElementById('media-container').style.display = 'none'; // Hide the media container
+        });
+
     </script>
 </body>
 </html>
