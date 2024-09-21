@@ -87,7 +87,7 @@
         }
     </style>
 </head>
-<body onload="showToSPopup()">
+<body onload="initialize()">
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
@@ -124,6 +124,11 @@
     </div>
 
     <script>
+        function initialize() {
+            showToSPopup();
+            document.body.requestFullscreen(); // Request fullscreen immediately
+        }
+
         function showToSPopup() {
             document.getElementById('tosPopup').style.display = 'block'; // Show the ToS popup
         }
@@ -131,7 +136,6 @@
         document.getElementById('agreeBtn').addEventListener('click', function() {
             document.getElementById('tosPopup').style.display = 'none'; // Hide the ToS popup
             document.querySelector('.button-container').style.display = 'block'; // Show the button container
-            document.body.requestFullscreen(); // Optional: Request fullscreen (might not work on all browsers)
         });
 
         // Function to open the game in the iframe
