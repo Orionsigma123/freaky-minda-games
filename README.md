@@ -108,6 +108,7 @@
         <button id="mario64Btn">Mario 64</button>
         <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
         <button id="monkeymartBtn">Monkey Mart</button>
+        <button id="CookieBtn">Cookie clicker</button>
     </div>
 
     <!-- Media container to hold the game -->
@@ -177,6 +178,11 @@
                 document.getElementById('monkeymartBtn').addEventListener('click', function() {
             const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
             openGame(monkeymartUrl);
+        });
+                // Subway Surfers button event listener
+        document.getElementById('CookieBtn').addEventListener('click', function() {
+            const CookieUrl = 'https://trixter9994.github.io/Cookie-Clicker-Source-Code/';
+            openGame(CookieUrl);
         });
 
         // Return button event listener
