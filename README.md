@@ -155,17 +155,17 @@
         <div id="gameContainer">
             <div class="game-card">
                 <h3>2048 Game</h3>
-                <iframe src="https://play2048.co/" id="game1"></iframe>
+                <iframe src="https://hczhcz.github.io/2048/20ez/" id="game1"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game1')">Fullscreen</button>
             </div>
             <div class="game-card">
                 <h3>Tetris</h3>
-                <iframe src="https://tetris.com/play-tetris" id="game2"></iframe>
+                <iframe src="https://www.mathster.com/games/tetris/" id="game2"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game2')">Fullscreen</button>
             </div>
             <div class="game-card">
                 <h3>Snake Game</h3>
-                <iframe src="https://playsnake.org/" id="game3"></iframe>
+                <iframe src="https://snake-3d.com/" id="game3"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game3')">Fullscreen</button>
             </div>
         </div>
