@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orionsigma123.Github.io</title>
     <style>
-        /* Optional: Style the heading, button, and media container */
+        /* General styles */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -14,13 +14,25 @@
         h1, h2 {
             color: #333;
         }
-        /* Style for the button container */
-        .button-container {
-            background-color: #000; /* Black background */
+        /* Popup styles */
+        #tosPopup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+        #tosContent {
+            background-color: #fff;
+            margin: 15% auto; /* 15% from the top and centered */
             padding: 20px;
-            border-radius: 15px; /* Smooth rounded corners */
-            display: inline-block; /* Ensures the rectangle wraps tightly around buttons */
-            margin-top: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            border-radius: 10px; /* Rounded corners */
         }
         button {
             padding: 10px 20px;
@@ -30,28 +42,18 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
-            margin: 10px;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #218838;
         }
-        /* Style for the Snapchat button */
-        #snapchatBtn {
-            position: absolute; /* Positioning it at the top center */
-            top: 10px; /* Distance from the top */
-            left: 50%; /* Centering */
-            transform: translateX(-50%); /* Centering correction */
-            background-color: white; /* White background */
-            color: black; /* Black text */
-            border: none;
-            border-radius: 15px; /* Smooth rounded corners */
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
-        }
-        #snapchatBtn:hover {
-            background-color: #f0f0f0; /* Slightly darker on hover */
+        /* Other existing styles */
+        .button-container {
+            background-color: #000;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
         }
         #media-container {
             display: none; /* Hidden by default */
@@ -67,25 +69,17 @@
             background-color: #dc3545;
             color: white;
         }
-        #exitBtn:hover {
-            background-color: #c82333;
-        }
-        /* Style for the return button and hidden links */
         #returnBtn {
-            position: absolute; /* Positioning it at the bottom center */
-            bottom: 20px; /* Distance from the bottom */
-            left: 50%; /* Centering */
-            transform: translateX(-50%); /* Centering correction */
-            background-color: #007bff; /* Blue background */
-            color: white; /* White text */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #007bff;
+            color: white;
             border: none;
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 5px;
             padding: 10px 20px;
-            font-size: 16px;
             cursor: pointer;
-        }
-        #returnBtn:hover {
-            background-color: #0069d9; /* Darker blue on hover */
         }
         #hiddenLinks {
             display: none; /* Hidden by default */
@@ -93,31 +87,35 @@
         }
     </style>
 </head>
-<body>
+<body onload="showToSPopup()">
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
-    <!-- Snapchat button at the top center -->
-    <button id="snapchatBtn">My Snapchat</button>
+    <!-- Terms of Service Popup -->
+    <div id="tosPopup">
+        <div id="tosContent">
+            <h3>Terms of Service</h3>
+            <p>I am not liable if you get in trouble with this website, and it is not my fault if you get ISS, or OSS.</p>
+            <button id="agreeBtn">I Agree to the Terms and Conditions</button>
+        </div>
+    </div>
 
-    <!-- Container for the buttons with black background and rounded corners -->
-    <div class="button-container">
-        <!-- Buttons to trigger the media player for different games -->
+    <!-- Container for the buttons -->
+    <div class="button-container" style="display: none;"> <!-- Initially hidden -->
         <button id="retroBowlBtn">Retro Bowl</button>
         <button id="slopeBtn">Slope</button>
         <button id="flappyBirdBtn">Flappy Bird</button>
-        <button id="mario64Btn">Mario 64</button> <!-- Added Mario 64 button -->
+        <button id="mario64Btn">Mario 64</button>
     </div>
-    
+
     <!-- Media container to hold the game -->
     <div id="media-container">
         <iframe id="gameFrame" src=""></iframe>
-        <!-- Exit button to close the iframe -->
         <button id="exitBtn">Exit</button>
     </div>
 
-    <!-- Return button at the bottom center -->
-    <button id="returnBtn">Return back to hide</button>
+    <!-- Return button -->
+    <button id="returnBtn" style="display: none;">Return back to hide</button>
 
     <!-- Hidden links for Schoology and Classlink -->
     <div id="hiddenLinks">
@@ -126,17 +124,21 @@
     </div>
 
     <script>
+        function showToSPopup() {
+            document.getElementById('tosPopup').style.display = 'block'; // Show the ToS popup
+        }
+
+        document.getElementById('agreeBtn').addEventListener('click', function() {
+            document.getElementById('tosPopup').style.display = 'none'; // Hide the ToS popup
+            document.querySelector('.button-container').style.display = 'block'; // Show the button container
+        });
+
         // Function to open the game in the iframe
         function openGame(url) {
             document.getElementById('gameFrame').src = url;
             document.getElementById('media-container').style.display = 'block';
             document.getElementById('returnBtn').style.display = 'none'; // Hide return button
         }
-
-        // Snapchat button event listener
-        document.getElementById('snapchatBtn').addEventListener('click', function() {
-            window.open('https://snapchat.com/add/iam2011orion', '_blank');
-        });
 
         // Game button event listeners
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
