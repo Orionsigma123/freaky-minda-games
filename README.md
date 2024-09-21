@@ -87,7 +87,7 @@
         }
     </style>
 </head>
-<body onload="initialize()">
+<body onload="showToSPopup()">
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
 
@@ -106,6 +106,7 @@
         <button id="slopeBtn">Slope</button>
         <button id="flappyBirdBtn">Flappy Bird</button>
         <button id="mario64Btn">Mario 64</button>
+        <button id="subwaySurfersBtn">Subway Surfers</button> <!-- New button -->
     </div>
 
     <!-- Media container to hold the game -->
@@ -124,11 +125,6 @@
     </div>
 
     <script>
-        function initialize() {
-            showToSPopup();
-            document.body.requestFullscreen(); // Request fullscreen immediately
-        }
-
         function showToSPopup() {
             document.getElementById('tosPopup').style.display = 'block'; // Show the ToS popup
         }
@@ -136,6 +132,11 @@
         document.getElementById('agreeBtn').addEventListener('click', function() {
             document.getElementById('tosPopup').style.display = 'none'; // Hide the ToS popup
             document.querySelector('.button-container').style.display = 'block'; // Show the button container
+            
+            // Request fullscreen after agreeing
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            }
         });
 
         // Function to open the game in the iframe
@@ -164,6 +165,12 @@
         document.getElementById('mario64Btn').addEventListener('click', function() {
             const mario64Url = 'https://sm64-embed.glitch.me/start.html';
             openGame(mario64Url);
+        });
+
+        // Subway Surfers button event listener
+        document.getElementById('subwaySurfersBtn').addEventListener('click', function() {
+            const subwaySurfersUrl = 'https://grims.pro/_games/subway-surfers-bali/';
+            openGame(subwaySurfersUrl);
         });
 
         // Return button event listener
