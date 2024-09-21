@@ -52,6 +52,30 @@
         #exitBtn:hover {
             background-color: #c82333;
         }
+        /* Style for the suggestions section */
+        #suggestionForm {
+            margin-top: 20px;
+        }
+        #suggestionInput {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        #suggestions {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .suggestion-item {
+            background-color: #e9e9e9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -64,6 +88,7 @@
         <button id="retroBowlBtn">Retro Bowl</button>
         <button id="slopeBtn">Slope</button>
         <button id="flappyBirdBtn">Flappy Bird</button>
+        <button id="suggestionBtn">Suggestions</button>
     </div>
     
     <!-- Media container to hold the game -->
@@ -71,6 +96,18 @@
         <iframe id="gameFrame" src=""></iframe>
         <!-- Exit button to close the iframe -->
         <button id="exitBtn">Exit</button>
+    </div>
+
+    <!-- Suggestion form -->
+    <div id="suggestionForm" style="display: none;">
+        <input type="text" id="suggestionInput" placeholder="Enter your suggestion" />
+        <button id="submitSuggestionBtn">Submit</button>
+    </div>
+
+    <!-- Display suggestions -->
+    <div id="suggestions">
+        <h3>User Suggestions:</h3>
+        <div id="suggestionsList"></div>
     </div>
 
     <script>
@@ -103,6 +140,41 @@
             document.getElementById('gameFrame').src = ''; // Clear the iframe
             document.getElementById('media-container').style.display = 'none'; // Hide the media container
         });
+
+        // Toggle suggestion form visibility
+        document.getElementById('suggestionBtn').addEventListener('click', function() {
+            const form = document.getElementById('suggestionForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Function to load suggestions from local storage
+        function loadSuggestions() {
+            const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            const suggestionsList = document.getElementById('suggestionsList');
+            suggestionsList.innerHTML = '';
+            suggestions.forEach(suggestion => {
+                const suggestionDiv = document.createElement('div');
+                suggestionDiv.classList.add('suggestion-item');
+                suggestionDiv.textContent = suggestion;
+                suggestionsList.appendChild(suggestionDiv);
+            });
+        }
+
+        // Submit suggestion and save it to local storage
+        document.getElementById('submitSuggestionBtn').addEventListener('click', function() {
+            const suggestionInput = document.getElementById('suggestionInput');
+            const suggestion = suggestionInput.value.trim();
+            if (suggestion) {
+                const suggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+                suggestions.push(suggestion);
+                localStorage.setItem('suggestions', JSON.stringify(suggestions));
+                suggestionInput.value = '';
+                loadSuggestions();
+            }
+        });
+
+        // Load suggestions on page load
+        loadSuggestions();
     </script>
 </body>
 </html>
