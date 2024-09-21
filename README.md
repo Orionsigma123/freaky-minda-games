@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orionsigma123.Github.io</title>
+    <title>FREAKY MINDA FOREVER</title>
     <style>
         /* General styles */
         body {
@@ -128,6 +128,16 @@
             margin-top: 10px;
             background-color: #ffc107;
         }
+
+        .pause-btn, .unpause-btn {
+            background-color: #dc3545;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+
+        .unpause-btn {
+            background-color: #28a745;
+        }
     </style>
 </head>
 <body>
@@ -155,18 +165,24 @@
         <div id="gameContainer">
             <div class="game-card">
                 <h3>2048 Game</h3>
-                <iframe src="https://hczhcz.github.io/2048/20ez/" id="game1"></iframe>
+                <iframe src="https://play2048.co/" id="game1"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game1')">Fullscreen</button>
+                <button class="pause-btn" onclick="pauseGame('game1', 'https://play2048.co/')">Pause</button>
+                <button class="unpause-btn" onclick="unpauseGame('game1', 'https://play2048.co/')">Unpause</button>
             </div>
             <div class="game-card">
                 <h3>Tetris</h3>
-                <iframe src="https://www.mathster.com/games/tetris/" id="game2"></iframe>
+                <iframe src="https://tetris.com/play-tetris" id="game2"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game2')">Fullscreen</button>
+                <button class="pause-btn" onclick="pauseGame('game2', 'https://tetris.com/play-tetris')">Pause</button>
+                <button class="unpause-btn" onclick="unpauseGame('game2', 'https://tetris.com/play-tetris')">Unpause</button>
             </div>
             <div class="game-card">
                 <h3>Snake Game</h3>
-                <iframe src="https://snake-3d.com/" id="game3"></iframe>
+                <iframe src="https://playsnake.org/" id="game3"></iframe>
                 <button class="fullscreen-btn" onclick="toggleFullscreen('game3')">Fullscreen</button>
+                <button class="pause-btn" onclick="pauseGame('game3', 'https://playsnake.org/')">Pause</button>
+                <button class="unpause-btn" onclick="unpauseGame('game3', 'https://playsnake.org/')">Unpause</button>
             </div>
         </div>
     </div>
@@ -241,6 +257,15 @@
             } else if (iframe.msRequestFullscreen) { // IE11
                 iframe.msRequestFullscreen();
             }
+        }
+
+        // Pause/Unpause functions for iframe games
+        function pauseGame(iframeId, srcUrl) {
+            document.getElementById(iframeId).src = ''; // Pause by clearing the iframe source
+        }
+
+        function unpauseGame(iframeId, srcUrl) {
+            document.getElementById(iframeId).src = srcUrl; // Unpause by resetting the iframe source
         }
     </script>
 </body>
