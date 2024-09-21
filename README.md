@@ -22,6 +22,7 @@
             border: none;
             cursor: pointer;
             border-radius: 5px;
+            margin: 10px;
         }
         button:hover {
             background-color: #218838;
@@ -49,33 +50,40 @@
     <h1>Orionsigma123.Github.io</h1>
     <h2>Welcome to Freaky Mindas Unblocked Games</h2>
     
-    <!-- Button to trigger the media player -->
+    <!-- Buttons to trigger the media player for different games -->
     <button id="retroBowlBtn">Retro Bowl</button>
+    <button id="slopeBtn">Slope</button>
     
     <!-- Media container to hold the game -->
     <div id="media-container">
-        <iframe id="retroBowlFrame" src=""></iframe>
+        <iframe id="gameFrame" src=""></iframe>
         <!-- Exit button to close the iframe -->
         <button id="exitBtn">Exit</button>
     </div>
 
     <script>
-        // JavaScript to handle the button click for opening the media player
+        // Function to open the game in the iframe
+        function openGame(url) {
+            document.getElementById('gameFrame').src = url;
+            document.getElementById('media-container').style.display = 'block';
+        }
+
+        // Retro Bowl button event listener
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
             const retroBowlUrl = 'https://ubg98.github.io/RetroBowl/';
-            document.getElementById('retroBowlFrame').src = retroBowlUrl;
-            
-            // Show the media container
-            document.getElementById('media-container').style.display = 'block';
+            openGame(retroBowlUrl);
         });
 
-        // JavaScript to handle the exit button click to close the media player
+        // Slope button event listener
+        document.getElementById('slopeBtn').addEventListener('click', function() {
+            const slopeUrl = 'https://firespread01.github.io/slope/';
+            openGame(slopeUrl);
+        });
+
+        // Exit button to close the game iframe
         document.getElementById('exitBtn').addEventListener('click', function() {
-            // Clear the iframe source to stop the game
-            document.getElementById('retroBowlFrame').src = '';
-            
-            // Hide the media container
-            document.getElementById('media-container').style.display = 'none';
+            document.getElementById('gameFrame').src = ''; // Clear the iframe
+            document.getElementById('media-container').style.display = 'none'; // Hide the media container
         });
     </script>
 </body>
