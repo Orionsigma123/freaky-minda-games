@@ -35,6 +35,14 @@
             height: 500px;
             border: none;
         }
+        #exitBtn {
+            margin-top: 10px;
+            background-color: #dc3545;
+            color: white;
+        }
+        #exitBtn:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -47,17 +55,27 @@
     <!-- Media container to hold the game -->
     <div id="media-container">
         <iframe id="retroBowlFrame" src=""></iframe>
+        <!-- Exit button to close the iframe -->
+        <button id="exitBtn">Exit</button>
     </div>
 
     <script>
-        // JavaScript to handle the button click
+        // JavaScript to handle the button click for opening the media player
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
-            // URL to the Retro Bowl game (adjust this URL to where the game is hosted)
-            const retroBowlUrl = 'https://ubg98.github.io/RetroBowl/'; // Replace with actual URL
+            const retroBowlUrl = 'https://ubg98.github.io/RetroBowl/';
             document.getElementById('retroBowlFrame').src = retroBowlUrl;
             
-            // Show the media container after clicking the button
+            // Show the media container
             document.getElementById('media-container').style.display = 'block';
+        });
+
+        // JavaScript to handle the exit button click to close the media player
+        document.getElementById('exitBtn').addEventListener('click', function() {
+            // Clear the iframe source to stop the game
+            document.getElementById('retroBowlFrame').src = '';
+            
+            // Hide the media container
+            document.getElementById('media-container').style.display = 'none';
         });
     </script>
 </body>
