@@ -92,6 +92,11 @@
         #gameFrame {
             display: none;
         }
+
+        .fullscreen-btn {
+            margin-top: 10px;
+            background-color: #ffc107;
+        }
     </style>
 </head>
 <body>
@@ -117,15 +122,18 @@
         <div id="gameContainer">
             <div class="game-card">
                 <h3>2048 Game</h3>
-                <iframe src="https://play2048.co/"></iframe>
+                <iframe src="https://play2048.co/" id="game1"></iframe>
+                <button class="fullscreen-btn" onclick="toggleFullscreen('game1')">Fullscreen</button>
             </div>
             <div class="game-card">
                 <h3>Tetris</h3>
-                <iframe src="https://tetris.com/play-tetris"></iframe>
+                <iframe src="https://tetris.com/play-tetris" id="game2"></iframe>
+                <button class="fullscreen-btn" onclick="toggleFullscreen('game2')">Fullscreen</button>
             </div>
             <div class="game-card">
                 <h3>Snake Game</h3>
-                <iframe src="https://playsnake.org/"></iframe>
+                <iframe src="https://playsnake.org/" id="game3"></iframe>
+                <button class="fullscreen-btn" onclick="toggleFullscreen('game3')">Fullscreen</button>
             </div>
         </div>
     </div>
@@ -160,6 +168,18 @@
         document.getElementById('mario64Btn').addEventListener('click', function() {
             window.open('https://sm64-embed.glitch.me/start.html', '_blank');
         });
+
+        // Function to toggle fullscreen
+        function toggleFullscreen(id) {
+            const iframe = document.getElementById(id);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { // Safari
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE11
+                iframe.msRequestFullscreen();
+            }
+        }
     </script>
 </body>
 </html>
