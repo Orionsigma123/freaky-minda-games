@@ -34,6 +34,8 @@
             width: 80%; /* Could be more or less, depending on screen size */
             border-radius: 10px; /* Rounded corners */
         }
+
+        /* Button styling and hover animation */
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -43,10 +45,35 @@
             cursor: pointer;
             border-radius: 5px;
             margin-top: 10px;
+            transition: transform 0.5s ease, background-color 0.3s ease; /* Smooth transition for scaling and rotation */
         }
         button:hover {
             background-color: #218838;
+            transform: scale(1.2) rotate(15deg); /* Grow and rotate the button */
         }
+        @keyframes rotateIn {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(15deg);
+            }
+        }
+        @keyframes rotateOut {
+            0% {
+                transform: rotate(15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        button:hover {
+            animation: rotateIn 0.5s ease forwards; /* Rotation animation when hovering */
+        }
+        button {
+            animation: rotateOut 0.5s ease forwards; /* Return to original state when unhovered */
+        }
+
         /* Other existing styles */
         .button-container {
             background-color: #000;
@@ -175,11 +202,11 @@
             openGame(subwaySurfersUrl);
         });
 
-                document.getElementById('monkeymartBtn').addEventListener('click', function() {
+        document.getElementById('monkeymartBtn').addEventListener('click', function() {
             const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
             openGame(monkeymartUrl);
         });
-                // Subway Surfers button event listener
+
         document.getElementById('CookieBtn').addEventListener('click', function() {
             const CookieUrl = 'https://trixter9994.github.io/Cookie-Clicker-Source-Code/';
             openGame(CookieUrl);
@@ -211,4 +238,3 @@
     </script>
 </body>
 </html>
-
