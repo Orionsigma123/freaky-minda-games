@@ -87,6 +87,15 @@
             border: none;
         }
 
+        /* Version style */
+        #version {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffdd57;
+        }
+
         /* Modal styles */
         #mediaPlayerModal {
             display: none;
@@ -180,7 +189,7 @@
 
         <!-- Audio controls (hidden by default) -->
         <div id="audioPlayer">
-            <audio id="audio" src=">/blob/main/God_Save_the_Schools_Winbooks.custom_score.mp3</audio>
+            <audio id="audio" src=">/blob/main/God_Save_the_Schools_Winbooks.custom_score.mp3"></audio>
             <button id="playBtn">Play</button>
             <button id="pauseBtn">Pause</button>
         </div>
@@ -221,7 +230,13 @@
         <iframe id="mediaPlayer" src=""></iframe>
     </div>
 
+    <div id="version"></div> <!-- Version display -->
+
     <script>
+        // Initialize version number
+        let version = 1; // Update this number for each change
+        document.getElementById('version').innerText = `Version: v${version}`;
+
         // Switching between main content and other section
         document.getElementById('otherBtn').addEventListener('click', function() {
             document.getElementById('mainContent').style.display = 'none';
