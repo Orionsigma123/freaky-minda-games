@@ -137,6 +137,24 @@
         .unpause-btn {
             background-color: #28a745;
         }
+
+        /* Audio player styles */
+        #audioPlayer {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #playSongBtn {
+            background-color: #ff9800;
+        }
+
+        #playBtn {
+            background-color: #28a745;
+        }
+
+        #pauseBtn {
+            background-color: #f44336;
+        }
     </style>
 </head>
 <body>
@@ -155,6 +173,16 @@
             <button id="subwaySurfersBtn">Subway Surfers</button>
             <button id="monkeymartBtn">Monkey Mart</button>
             <button id="DirtbikeBtn">Dirtbike game</button>
+        </div>
+
+        <!-- Button to play the song -->
+        <button id="playSongBtn">Play Song</button>
+
+        <!-- Audio controls (hidden by default) -->
+        <div id="audioPlayer">
+            <audio id="audio" src="></audio>
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
         </div>
     </div>
 
@@ -224,7 +252,6 @@
             openMediaPlayer('https://sm64-embed.glitch.me/start.html');
         });
 
-        // New game buttons for Subway Surfers and Monkey Mart
         document.getElementById('subwaySurfersBtn').addEventListener('click', function() {
             const subwaySurfersUrl = 'https://grims.pro/_games/subway-surfers-bali/';
             openMediaPlayer(subwaySurfersUrl);
@@ -235,7 +262,6 @@
             openMediaPlayer(monkeymartUrl);
         });
 
-                // Game button event listeners to open in media player
         document.getElementById('DirtbikeBtn').addEventListener('click', function() {
             openMediaPlayer('https://www.friv.com/z/games/motox3m/game.html');
         });
@@ -272,7 +298,19 @@
         function unpauseGame(iframeId, srcUrl) {
             document.getElementById(iframeId).src = srcUrl; // Unpause by resetting the iframe source
         }
+
+        // Audio play and pause functionality
+        document.getElementById('playSongBtn').addEventListener('click', function() {
+            document.getElementById('audioPlayer').style.display = 'block';
+        });
+
+        document.getElementById('playBtn').addEventListener('click', function() {
+            document.getElementById('audio').play();
+        });
+
+        document.getElementById('pauseBtn').addEventListener('click', function() {
+            document.getElementById('audio').pause();
+        });
     </script>
 </body>
 </html>
-
