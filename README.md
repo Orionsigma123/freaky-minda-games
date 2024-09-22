@@ -253,7 +253,7 @@
         });
 
         document.getElementById('subwaySurfersBtn').addEventListener('click', function() {
-            const subwaySurfersUrl = 'https://grims.pro/_games/subway-surfers-bali/';
+            const subwaySurfersUrl = 'https://godkudocs.github.io/subway-surfers/src/sub';
             openMediaPlayer(subwaySurfersUrl);
         });
 
