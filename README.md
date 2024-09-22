@@ -258,7 +258,7 @@
         });
 
         document.getElementById('monkeymartBtn').addEventListener('click', function() {
-            const monkeymartUrl = 'https://prxyboss101.github.io/monkey-mart/';
+            const monkeymartUrl = 'https://orionsigma123.github.io/Freaky-minda-/';
             openMediaPlayer(monkeymartUrl);
         });
 
