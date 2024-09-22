@@ -180,7 +180,7 @@
 
         <!-- Audio controls (hidden by default) -->
         <div id="audioPlayer">
-            <audio id="audio" src=">https://github.com/Orionsigma123/freakyminda.github.io/blob/main/God_Save_the_Schools_Winbooks.custom_score.mp3</audio>
+            <audio id="audio" src=">/blob/main/God_Save_the_Schools_Winbooks.custom_score.mp3</audio>
             <button id="playBtn">Play</button>
             <button id="pauseBtn">Pause</button>
         </div>
@@ -237,7 +237,7 @@
 
         // Game button event listeners to open in media player
         document.getElementById('retroBowlBtn').addEventListener('click', function() {
-            openMediaPlayer('https://loserboysonyt.github.io/');
+            openMediaPlayer('https://shawn43.github.io/retrobowl-unlimited/');
         });
 
         document.getElementById('slopeBtn').addEventListener('click', function() {
