@@ -322,5 +322,3 @@
             document.getElementById('audio').pause();
         });
     </script>
-</body>
-</html>
