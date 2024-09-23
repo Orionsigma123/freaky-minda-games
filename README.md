@@ -229,7 +229,7 @@
 
     <script>
         // Initialize version number
-        let version = 1.57; // Update this number for each change
+        let version = 1.58; // Update this number for each change
         document.getElementById('version').innerText = `Version: v${version}`;
 
         // Switching between main content and other section
