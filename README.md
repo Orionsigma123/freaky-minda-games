@@ -170,6 +170,7 @@
     <div id="mainContent">
         <h1>FREAKY MINDA FOREVER!</h1>
         <h2>Welcome to Freaky Mindas Unblocked Games</h2>
+     
 
         <button id="otherBtn">Other</button>
 
@@ -183,6 +184,7 @@
             <button id="monkeymartBtn">Monkey Mart</button>
             <button id="DirtbikeBtn">Dirtbike game</button>
         </div>
+        <p>Hey, Just wanted to come on here and say that I'm struggling with issues against korrine (Or kai.) And it might not make me do stuff on here for a while. If you need me to fix something, just ask in school though. I will add it to a list of things that need done. But genuinely, Korrine made me depressed as shit, and made me genuinely unhappy. I love all of you who care about me. You guys are part of the reason I like life. You guys who genuinely want to see me win are the best people ever. Love you guys so fucking much. Remember, Freaky Minda forever <3 </p>
 
         <!-- Button to play the song -->
         <button id="playSongBtn">Play Song</button>
