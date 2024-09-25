@@ -32,6 +32,7 @@
     <a>Hey, Mr. Secrest wants me to close up shop or I'm getting ISS all this week. So, what I'm doing is moving the website. I hate to do this, but I have to, to keep me from getting out of trouble. I cannot tell you the website, and only I (Orion) will know it. I do, although, have something else. Stay tuned >:3</a>
 
     <h1>OCTOBER 3RD 2024. BE READY.</h1>
+    <a> I will say, this is not a threat btw. Nothing of the sort!</a>
 
 </body>
 </html>
